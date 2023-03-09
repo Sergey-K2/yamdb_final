@@ -13,12 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = os.getenv("SECRET_KEY", default="xxxxx")
-PRACTICUM_TOKEN = os.getenv("PRACTICUM_TOKEN", default="xxxxxx")
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", default="xxxxxx")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", default="xxxxxx")
-DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+DEBUG = os.getenv("DEBUG", default="True")
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*")
 
 
 INSTALLED_APPS = [
@@ -71,7 +69,7 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": os.getenv(
-            "DB_ENGINE", default="django.db.backends.postgresql"
+            "DB_ENGINE", default="'django.db.backends.sqlite3"
         ),
         "NAME": os.getenv("DB_NAME", default="postgres"),
         "USER": os.getenv("POSTGRES_USER", default="postgres"),

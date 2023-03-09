@@ -33,7 +33,7 @@ e-mail.
 Клонируем репозиторий:
 
 ```
-git clone https://github.com/Sergey-K2/infra_sp2
+git clone https://github.com/Sergey-K2/yamdb_final
 ```
 Переходим в него в командной строке:
 ```
@@ -43,15 +43,6 @@ cd api_yamdb
 Разворачиваем контейнеры 
 ```
 docker-compose up
-```
-
-Устанавливаем зависимости из файла requirements.txt:
-
-```
-docker compose exec python -m pip install --upgrade pip
-```
-```
-docker-compose exec pip install -r requirements.txt
 ```
 
 Выполняем миграции:
