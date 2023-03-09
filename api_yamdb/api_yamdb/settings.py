@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY", default="xxxxx")
 
-DEBUG = os.getenv("DEBUG", default=False)
+DEBUG = os.getenv("DEBUG", "False").upper() == "TRUE"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*")
 
@@ -68,13 +68,11 @@ WSGI_APPLICATION = "api_yamdb.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.getenv(
-            "DB_ENGINE", default="django.db.backends.sqlite3"
-        ),
-        "NAME": os.getenv("DB_NAME", default="postgres"),
-        "USER": os.getenv("POSTGRES_USER", default="postgres"),
+        "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.getenv("DB_NAME", default="sqlite3"),
+        "USER": os.getenv("POSTGRES_USER", default="sqlite3"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD", default="post_db_pasw"),
-        "HOST": os.getenv("DB_HOST", default="db"),
+        "HOST": os.getenv("DB_HOST", default="sqlite"),
         "PORT": os.getenv("DB_PORT", default=5432),
     }
 }
