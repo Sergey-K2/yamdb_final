@@ -1,5 +1,13 @@
 import random
 
+from api.filters import TitleFilter
+from api.permissions import (IsAdmin, IsAdminOrModerOrAuthorOrReadOnly,
+                             IsAdminOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             SignUpSerializer, TitleGetSerializer,
+                             TitlePostSerializer, TokenSerializer,
+                             UserProfileSerializer, UserSerializer)
 from django.conf import settings
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -14,25 +22,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework_simplejwt.tokens import AccessToken
-
-from api.filters import TitleFilter
-from api.permissions import (
-    IsAdmin,
-    IsAdminOrModerOrAuthorOrReadOnly,
-    IsAdminOrReadOnly,
-)
-from api.serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    SignUpSerializer,
-    TitleGetSerializer,
-    TitlePostSerializer,
-    TokenSerializer,
-    UserSerializer,
-    UserProfileSerializer,
-)
 from reviews.models import Category, CustomUser, Genre, Review, Title
 
 

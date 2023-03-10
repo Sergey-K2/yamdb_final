@@ -3,14 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
-from reviews.models import (
-    Category,
-    Comment,
-    CustomUser,
-    Genre,
-    Review,
-    Title,
-)
+from reviews.models import Category, Comment, CustomUser, Genre, Review, Title
 from reviews.validators import username_validator, validate_year
 
 
