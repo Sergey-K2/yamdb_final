@@ -36,5 +36,5 @@ class Command(BaseCommand):
                 count += 1
 
     def handler(self, *args, **options):
-        for csv_file, Model in CSV_FILES_DATA.items():
-            self.import_file(csv_file, Model)
+        for csv_file, model in CSV_FILES_DATA.items():
+            self.import_file(csv_file, model)
