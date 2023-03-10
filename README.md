@@ -62,7 +62,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 ### Статус workflow
-![yamdb_workflow push](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
+![Status of api_yamdb project workflow](https://github.com/Sergey-K2/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
 
 ### Документация
 ```
