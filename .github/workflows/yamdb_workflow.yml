@@ -59,7 +59,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull serge_kzv/api_yamdb:v1.2
+          sudo docker pull sergekzv/api_yamdb:v1.2
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
