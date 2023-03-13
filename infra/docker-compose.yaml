@@ -34,6 +34,8 @@ services:
 
     depends_on:
       - web
+    certbot:
+      image: certbot/certbot
 
 volumes:
   static_value:
